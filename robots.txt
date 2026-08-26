@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /brand-assets
+Disallow: /brand-assets.html
 
 Sitemap: https://hiveintl.com/sitemap.xml

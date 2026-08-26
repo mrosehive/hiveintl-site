@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Brand Assets (Internal) — Hive International</title>
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon_32px.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon_180px.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <style>
+    /* page-local helpers for the asset reference */
+    .asset-url { font-family: var(--font-mono, 'DM Mono', monospace); font-size: .82rem; color: var(--gold);
+      background: var(--deep-slate, #141B22); border: 1px solid var(--line, #2E3A45); border-radius: 4px;
+      padding: .55rem .7rem; display: block; overflow-x: auto; white-space: nowrap; -webkit-user-select: all; user-select: all; }
+    .snippet { font-family: var(--font-mono, 'DM Mono', monospace); font-size: .8rem; color: var(--silver);
+      background: var(--deep-slate, #141B22); border: 1px solid var(--line, #2E3A45); border-radius: 4px;
+      padding: .7rem; display: block; overflow-x: auto; white-space: pre; margin-top: .5rem; -webkit-user-select: all; user-select: all; }
+    .logo-stage { border-radius: 6px; padding: var(--sp-3); display: flex; align-items: center; justify-content: center; min-height: 130px; margin-bottom: var(--sp-2); }
+    .stage-white { background: #F5F2ED; }
+    .stage-slate { background: #1B222A; border: 1px solid var(--line, #2E3A45); }
+    .swatch { border-radius: 6px; height: 84px; border: 1px solid rgba(255,255,255,.08); }
+    .sw-row { display: flex; justify-content: space-between; align-items: baseline; margin-top: .5rem; }
+    .sw-row .name { font-weight: 700; }
+    .sw-row .hex { font-family: var(--font-mono, 'DM Mono', monospace); color: var(--gold); font-size: .85rem; -webkit-user-select: all; user-select: all; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav-logo" href="index.html" aria-label="Hive International — home">
+        <img src="assets/logos/hive_horizontal_primary.svg" alt="Hive International">
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page header -->
+    <section class="bg-deep" style="padding-top:var(--sp-7);padding-bottom:var(--sp-5);">
+      <div class="container narrow">
+        <span class="eyebrow">Internal Reference · Not in site navigation</span>
+        <h1>Brand assets.</h1>
+        <p class="lead muted">Hosted logo and theme assets for use in HTML email (e.g., the Weekly SITREP) and other web-embedded materials. These files live at stable <code>hiveintl.com</code> URLs so email and web templates can pull them remotely. This page is unlisted and set to <code>noindex</code> — bookmark it; it is not linked from the public site.</p>
+      </div>
+    </section>
+
+    <!-- Email usage notes FIRST (most important) -->
+    <section>
+      <div class="container narrow">
+        <span class="eyebrow">Read First — Logos in Email</span>
+        <h2>How email logos actually behave.</h2>
+        <p class="reveal">Hosting the logo at a public URL and referencing it with <code>&lt;img src="https://…"&gt;</code> is the correct, standard way to put a mark in an HTML email — it keeps the message light and lets the image be updated centrally. Two realities to design around:</p>
+        <ul class="outcomes" style="margin-top:var(--sp-2);">
+          <li><strong style="color:var(--warm-white);">Use PNG, never SVG.</strong> Most email clients (Outlook, many mobile clients) do not render SVG. Every asset below is PNG.</li>
+          <li><strong style="color:var(--warm-white);">Remote images are often blocked by default.</strong> Outlook desktop and others hide remote images until the recipient clicks "show images." So a hosted logo is the right method, but it is not guaranteed to appear instantly. Always set <code>alt</code> text and explicit <code>width</code> so a blocked or slow image still reads correctly, and pick the variant whose look matches your header background.</li>
+          <li><strong style="color:var(--warm-white);">Always use absolute <code>https://hiveintl.com/…</code> URLs</strong> in email — relative paths won't resolve in an inbox.</li>
+          <li><strong style="color:var(--warm-white);">Custom fonts don't load in email.</strong> Bebas Neue / DM Sans won't render in most clients; set a system fallback (Arial, Helvetica, sans-serif) in the email's inline CSS.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="bg-charcoal">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Logos · Email-Ready PNG</span>
+          <h2>Hosted logo files.</h2>
+        </div>
+        <div class="grid grid-2">
+
+          <article class="card">
+            <div class="logo-stage stage-slate">
+              <img src="assets/brand/hive-logo-horizontal-on-slate.png" alt="Hive International logo on slate" style="max-width:300px;width:100%;height:auto;">
+            </div>
+            <h3>Horizontal — on slate (recommended)</h3>
+            <p>Self-contained logo block on Hive slate. The safest default for an email header — reads cleanly on white or dark message bodies. 600×317px source; display at 300px.</p>
+            <span class="asset-url">https://hiveintl.com/assets/brand/hive-logo-horizontal-on-slate.png</span>
+            <span class="snippet">&lt;img src="https://hiveintl.com/assets/brand/hive-logo-horizontal-on-slate.png"
+     alt="Hive International" width="300" style="display:block;border:0;"&gt;</span>
+          </article>
+
+          <article class="card">
+            <div class="logo-stage stage-white">
+              <img src="assets/brand/hive-logo-horizontal-dark-text.png" alt="Hive International logo, dark text" style="max-width:300px;width:100%;height:auto;">
+            </div>
+            <h3>Horizontal — dark text (light backgrounds)</h3>
+            <p>Transparent PNG with slate wordmark. Use on white or warm-white email backgrounds. 600×317px source; display at 300px.</p>
+            <span class="asset-url">https://hiveintl.com/assets/brand/hive-logo-horizontal-dark-text.png</span>
+            <span class="snippet">&lt;img src="https://hiveintl.com/assets/brand/hive-logo-horizontal-dark-text.png"
+     alt="Hive International" width="300" style="display:block;border:0;"&gt;</span>
+          </article>
+
+          <article class="card">
+            <div class="logo-stage stage-slate">
+              <img src="assets/brand/hive-logo-horizontal-light-text.png" alt="Hive International logo, light text" style="max-width:300px;width:100%;height:auto;">
+            </div>
+            <h3>Horizontal — light text (dark backgrounds)</h3>
+            <p>Transparent PNG with silver wordmark. Use on slate, charcoal, or other dark email backgrounds. 600×317px source; display at 300px.</p>
+            <span class="asset-url">https://hiveintl.com/assets/brand/hive-logo-horizontal-light-text.png</span>
+            <span class="snippet">&lt;img src="https://hiveintl.com/assets/brand/hive-logo-horizontal-light-text.png"
+     alt="Hive International" width="300" style="display:block;border:0;"&gt;</span>
+          </article>
+
+          <article class="card">
+            <div class="logo-stage stage-white">
+              <img src="assets/brand/hive-logo-stacked-on-slate.png" alt="Hive International stacked logo on slate" style="max-width:180px;width:100%;height:auto;">
+            </div>
+            <h3>Stacked — on slate</h3>
+            <p>Square-ish stacked lockup on slate, for narrow or centered placements (social avatars, compact headers). 420×473px source; display ~180px.</p>
+            <span class="asset-url">https://hiveintl.com/assets/brand/hive-logo-stacked-on-slate.png</span>
+            <span class="snippet">&lt;img src="https://hiveintl.com/assets/brand/hive-logo-stacked-on-slate.png"
+     alt="Hive International" width="180" style="display:block;border:0;"&gt;</span>
+          </article>
+
+        </div>
+        <p class="muted" style="margin-top:var(--sp-3);font-size:.9rem;">Vector (SVG) and full-resolution print masters live in the brand library (<code>Graphics &amp; Branding / Hive Logo-Branding / Hive Logos</code>) — use those for print and design files, not the email PNGs above. Per brand rules, use official logo files only; never redraw or regenerate the mark.</p>
+      </div>
+    </section>
+
+    <!-- Palette -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Color</span>
+          <h2>Palette.</h2>
+        </div>
+        <div class="grid grid-3">
+          <div><div class="swatch" style="background:#1B222A;"></div><div class="sw-row"><span class="name">Slate</span><span class="hex">#1B222A</span></div></div>
+          <div><div class="swatch" style="background:#2E3A45;"></div><div class="sw-row"><span class="name">Charcoal</span><span class="hex">#2E3A45</span></div></div>
+          <div><div class="swatch" style="background:#141B22;"></div><div class="sw-row"><span class="name">Deep Slate</span><span class="hex">#141B22</span></div></div>
+          <div><div class="swatch" style="background:#F2B632;"></div><div class="sw-row"><span class="name">Gold</span><span class="hex">#F2B632</span></div></div>
+          <div><div class="swatch" style="background:#B8BCC4;"></div><div class="sw-row"><span class="name">Silver</span><span class="hex">#B8BCC4</span></div></div>
+          <div><div class="swatch" style="background:#F5F2ED;"></div><div class="sw-row"><span class="name">Warm White</span><span class="hex">#F5F2ED</span></div></div>
+        </div>
+        <p class="muted" style="margin-top:var(--sp-3);font-size:.9rem;">Slate-led; gold is accent and emphasis only — never a fill. Never place near-black text on a dark surface: on slate/charcoal use Warm White or Silver for body text.</p>
+      </div>
+    </section>
+
+    <!-- Type -->
+    <section class="bg-charcoal">
+      <div class="container narrow">
+        <span class="eyebrow">Type</span>
+        <h2>Typography.</h2>
+        <p class="reveal"><strong style="color:var(--gold);">Bebas Neue</strong> — display and headings only. Never set body copy in Bebas.</p>
+        <p class="reveal"><strong style="color:var(--gold);">DM Sans</strong> — all body copy.</p>
+        <p class="reveal"><strong style="color:var(--gold);">DM Mono</strong> — codes, contract numbers, and data labels.</p>
+        <p class="muted" style="margin-top:var(--sp-2);">Tagline, verbatim: <strong style="color:var(--warm-white);">Advisory Depth. Operational Results.</strong> Third-person voice. No emoji. In email, set a system fallback (Arial, Helvetica, sans-serif) — these web fonts will not load in most inboxes.</p>
+      </div>
+    </section>
+
+    <!-- Other hosted assets -->
+    <section>
+      <div class="container narrow">
+        <span class="eyebrow">Also Hosted</span>
+        <h2>Other web assets.</h2>
+        <ul class="outcomes" style="margin-top:var(--sp-2);">
+          <li>Favicon / app icons — <span class="asset-url" style="display:inline-block;margin-top:.3rem;">https://hiveintl.com/assets/icons/icon_180px.png</span></li>
+          <li>Social / Open Graph card (1200×630) — <span class="asset-url" style="display:inline-block;margin-top:.3rem;">https://hiveintl.com/assets/img/og_card.png</span></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="assets/logos/hive_stacked_primary.svg" alt="Hive International"></div>
+          <p class="tagline-lockup tagline-sm"><span class="td">Advisory Depth.</span> <span class="tr">Operational Results.</span></p>
+          <p class="footer-tag">Internal brand-asset reference. Not linked from the public site.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="capabilities.html">Capabilities</a>
+          <a href="impact.html">Impact &amp; Past Performance</a>
+          <a href="contracting.html">Contracting</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+17032494348">+1 703.249.4348</a>
+          <a href="mailto:elevate@hiveintl.com">elevate@hiveintl.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="mono">© <span data-year>2026</span> Hive International, LLC · All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=3" defer></script>
+</body>
+</html>
