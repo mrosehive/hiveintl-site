@@ -151,13 +151,23 @@
         return;
       }
 
+      // Honeypot: real visitors never see or fill this field. If it's filled, quietly
+      // pretend success without ever contacting the Bench — cheap bot deterrent.
+      var hp = document.getElementById('r-website');
+      if (hp && hp.value.trim() !== '') {
+        resumeForm.classList.add('hidden');
+        okBox.classList.remove('hidden');
+        return;
+      }
+
       var nameParts = (document.getElementById('r-name').value || '').trim().split(/\s+/);
       var payload = {
         first_name: nameParts.shift() || '',
         last_name: nameParts.join(' '),
         email: document.getElementById('r-email').value.trim(),
         phone: document.getElementById('r-phone').value.trim(),
-        message: document.getElementById('r-message').value.trim()
+        message: document.getElementById('r-message').value.trim(),
+        hp_url: hp ? hp.value.trim() : ''
       };
 
       function send() {

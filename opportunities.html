@@ -116,6 +116,10 @@
           <p class="muted" style="margin-top:var(--sp-2);">…and the adjacent specialties our government partners need. If your experience fits any of these — or sits just alongside — we want to hear from you.</p>
 
           <form id="resume-form" style="margin-top:var(--sp-4);max-width:520px;" novalidate>
+            <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+              <label for="r-website">Website</label>
+              <input type="text" id="r-website" name="hp_url" tabindex="-1" autocomplete="off">
+            </div>
             <div class="field">
               <label for="r-name">Name</label>
               <input type="text" id="r-name" name="name" autocomplete="name" required>
@@ -203,6 +207,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=4" defer></script>
+  <script src="js/main.js?v=5" defer></script>
 </body>
 </html>
