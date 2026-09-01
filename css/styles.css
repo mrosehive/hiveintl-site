@@ -259,6 +259,8 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .field textarea { resize: vertical; min-height: 150px; }
 .hidden { display: none !important; }
 .form-success { background: rgba(76,175,80,0.1); border: 1px solid var(--status-active); border-radius: var(--radius); padding: var(--sp-4); }
+.form-error { background: rgba(224,133,133,0.08); border: 1px solid #E08585; border-radius: var(--radius); padding: var(--sp-3); color: #E08585; }
+.field-note { color: var(--silver); font-size: 0.85rem; margin: -.5rem 0 var(--sp-3); }
 .contact-detail { display: flex; gap: var(--sp-2); align-items: flex-start; margin-bottom: var(--sp-3); }
 .contact-detail .k { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; min-width: 90px; padding-top: .2rem; }
 .contact-detail .v { color: var(--warm-white); }

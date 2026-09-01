@@ -128,6 +128,79 @@
     });
   }
 
+  /* ---------- Résumé submission (Join the Hive page) ---------- */
+  /* Posts directly to the SME Bench intake endpoint (Netlify Function + Supabase),
+     not a Netlify Form — the résumé lands in the Bench's Pending review queue. */
+  var resumeForm = document.getElementById('resume-form');
+  if (resumeForm) {
+    var RESUME_ENDPOINT = 'https://bench.hiveintl.com/.netlify/functions/submit-candidate';
+    var RESUME_MAX_BYTES = 8 * 1024 * 1024;
+    resumeForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var errBox = document.getElementById('resume-error');
+      var okBox = document.getElementById('resume-success');
+      var btn = document.getElementById('resume-submit-btn');
+      var fileInput = document.getElementById('r-resume');
+      var file = fileInput.files[0];
+      errBox.classList.add('hidden');
+      errBox.textContent = '';
+
+      if (file && file.size > RESUME_MAX_BYTES) {
+        errBox.textContent = 'That file is larger than 8 MB — please attach a smaller PDF or Word file, or email it to elevate@hiveintl.com.';
+        errBox.classList.remove('hidden');
+        return;
+      }
+
+      var nameParts = (document.getElementById('r-name').value || '').trim().split(/\s+/);
+      var payload = {
+        first_name: nameParts.shift() || '',
+        last_name: nameParts.join(' '),
+        email: document.getElementById('r-email').value.trim(),
+        phone: document.getElementById('r-phone').value.trim(),
+        message: document.getElementById('r-message').value.trim()
+      };
+
+      function send() {
+        btn.disabled = true;
+        btn.textContent = 'Submitting…';
+        fetch(RESUME_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (r) {
+          return r.json().then(function (j) { return { ok: r.ok, body: j }; });
+        }).then(function (res) {
+          if (!res.ok) throw new Error((res.body && res.body.error) || 'Submission failed.');
+          resumeForm.classList.add('hidden');
+          okBox.classList.remove('hidden');
+          okBox.focus();
+        }).catch(function (err) {
+          errBox.textContent = (err && err.message) ? err.message : 'Something went wrong — please try again or email elevate@hiveintl.com.';
+          errBox.classList.remove('hidden');
+        }).finally(function () {
+          btn.disabled = false;
+          btn.innerHTML = 'Submit Résumé <span class="arrow">→</span>';
+        });
+      }
+
+      if (file) {
+        var reader = new FileReader();
+        reader.onload = function () {
+          payload.filename = file.name;
+          payload.contentBase64 = String(reader.result).split(',')[1] || '';
+          send();
+        };
+        reader.onerror = function () {
+          errBox.textContent = 'Could not read that file — please try again or email elevate@hiveintl.com.';
+          errBox.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+      } else {
+        send();
+      }
+    });
+  }
+
   /* ---------- Geographic footprint map tooltips (Impact page) ---------- */
   /* The SVG is inlined in the page; JS only wires hover/tap/focus tooltips. */
   var mapWrap = document.getElementById('footprint-map');

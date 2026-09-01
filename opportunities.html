@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -114,9 +114,38 @@
           <span class="eyebrow" style="color:var(--gold);">Areas of Expertise We Recruit</span>
           <p style="font-size:1.05rem;line-height:1.95;margin-top:var(--sp-2);">Sensitive &amp; high-profile investigations · Digital &amp; mobile-device forensics · Transnational organized crime &amp; task force operations · Customs enforcement, passenger &amp; cargo targeting · Criminal intelligence analysis · Financial &amp; cryptocurrency investigations · Cyber &amp; AI governance and investigations · Border security &amp; interdiction · Digital evidence, lab accreditation &amp; case management · Monitoring, evaluation &amp; data visualization · Instructional systems design &amp; training · Leadership development (CliftonStrengths, MBTI &amp; DISC) · Anti-corruption &amp; integrity · Program management &amp; logistics</p>
           <p class="muted" style="margin-top:var(--sp-2);">…and the adjacent specialties our government partners need. If your experience fits any of these — or sits just alongside — we want to hear from you.</p>
-          <div class="hero-cta" style="margin-top:var(--sp-3);">
-            <a href="mailto:elevate@hiveintl.com?subject=Expression%20of%20Interest%20%E2%80%94%20Hive%20International&amp;body=Please%20attach%20your%20resume%20and%20note%20your%20area(s)%20of%20expertise." class="btn btn-primary">Send Your Resume <span class="arrow">→</span></a>
+
+          <form id="resume-form" style="margin-top:var(--sp-4);max-width:520px;" novalidate>
+            <div class="field">
+              <label for="r-name">Name</label>
+              <input type="text" id="r-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="r-email">Email</label>
+              <input type="email" id="r-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="r-phone">Phone (optional)</label>
+              <input type="tel" id="r-phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="r-message">Areas of expertise / note (optional)</label>
+              <textarea id="r-message" name="message" rows="3" style="min-height:90px;"></textarea>
+            </div>
+            <div class="field" style="margin-bottom:.35rem;">
+              <label for="r-resume">Résumé</label>
+              <input type="file" id="r-resume" name="resume" accept=".pdf,.doc,.docx" required>
+            </div>
+            <p class="field-note">PDF or Word, up to 8 MB.</p>
+            <button type="submit" class="btn btn-primary" id="resume-submit-btn">Submit Résumé <span class="arrow">→</span></button>
+            <p class="muted" style="margin-top:var(--sp-3);font-size:.9rem;">Prefer email? Send your résumé directly to <a href="mailto:elevate@hiveintl.com?subject=Expression%20of%20Interest%20%E2%80%94%20Hive%20International&amp;body=Please%20attach%20your%20resume%20and%20note%20your%20area(s)%20of%20expertise.">elevate@hiveintl.com</a>.</p>
+          </form>
+
+          <div class="form-success hidden" id="resume-success" tabindex="-1" role="status" style="margin-top:var(--sp-3);max-width:520px;">
+            <h3 style="color:var(--status-active);">Résumé received.</h3>
+            <p class="muted" style="margin-bottom:0;">Thank you — your submission has reached the Hive team and will be reviewed shortly.</p>
           </div>
+          <div class="form-error hidden" id="resume-error" role="alert" style="margin-top:var(--sp-3);max-width:520px;"></div>
         </div>
       </div>
     </section>
@@ -174,6 +203,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=3" defer></script>
+  <script src="js/main.js?v=4" defer></script>
 </body>
 </html>
