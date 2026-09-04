@@ -167,6 +167,7 @@
         email: document.getElementById('r-email').value.trim(),
         phone: document.getElementById('r-phone').value.trim(),
         message: document.getElementById('r-message').value.trim(),
+        referred_by: document.getElementById('r-referred').value.trim(),
         hp_url: hp ? hp.value.trim() : ''
       };
 
