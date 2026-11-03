@@ -1,6 +1,7 @@
 /* ============================================================
    HIVE INTERNATIONAL — Site Stylesheet
    Design system locked to the Hive Master + Digital Brand Guides.
+   Palette, type, and radius values mirror Brand-System/tokens/ (standards rule 6); change them there first.
    Register: dark, data-dense, authoritative.
    ============================================================ */
 
@@ -11,7 +12,7 @@
   --charcoal:     #2E3A45;   /* secondary surface / cards */
   --deep-slate:   #141B22;   /* darkest — footer, hero base */
   --gold:         #F2B632;   /* primary accent */
-  --gold-dim:     #c9981f;   /* gold hover/active */
+  --gold-dim:     #D99A1C;   /* pressed gold: token hive-gold-deep */
   --silver:       #B8BCC4;   /* muted / secondary text */
   --warm-white:   #F5F2ED;   /* primary text on dark */
   --warm-white-2: #E8E4DE;
@@ -21,11 +22,12 @@
   /* Status / filter accents */
   --status-active:    #4CAF50;
   --status-complete:  #B8BCC4;
+  --danger-text:      #EF8A87;   /* token hive-danger-text */
 
   /* Type */
   --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
   --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono:    'DM Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-mono:    'Space Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* Spacing scale */
   --sp-1: 0.5rem;  --sp-2: 1rem;   --sp-3: 1.5rem;  --sp-4: 2rem;
@@ -33,7 +35,7 @@
 
   --container: 1200px;
   --container-narrow: 880px;
-  --radius: 4px;
+  --radius: 6px;   /* token radius-md */
   --shadow: 0 10px 40px rgba(0,0,0,0.35);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -259,7 +261,7 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .field textarea { resize: vertical; min-height: 150px; }
 .hidden { display: none !important; }
 .form-success { background: rgba(76,175,80,0.1); border: 1px solid var(--status-active); border-radius: var(--radius); padding: var(--sp-4); }
-.form-error { background: rgba(224,133,133,0.08); border: 1px solid #E08585; border-radius: var(--radius); padding: var(--sp-3); color: #E08585; }
+.form-error { background: rgba(239,138,135,0.08); border: 1px solid var(--danger-text); border-radius: var(--radius); padding: var(--sp-3); color: var(--danger-text); }
 .field-note { color: var(--silver); font-size: 0.85rem; margin: -.5rem 0 var(--sp-3); }
 .contact-detail { display: flex; gap: var(--sp-2); align-items: flex-start; margin-bottom: var(--sp-3); }
 .contact-detail .k { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; min-width: 90px; padding-top: .2rem; }
